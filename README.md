@@ -17,6 +17,13 @@ Real-time video calls, screen sharing, live chat, and host-controlled meeting ro
 
 ---
 
+<p align="center">
+  <a href="https://meet-up-psi-henna.vercel.app"><strong>🔗 Live Demo</strong></a> &nbsp;·&nbsp;
+  <a href="https://meet-up-uwat.onrender.com/api/health">API Health</a>
+</p>
+
+---
+
 ## ✨ Features
 
 | | |
