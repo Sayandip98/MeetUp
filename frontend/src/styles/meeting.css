@@ -1,0 +1,234 @@
+/* src/styles/meeting.css */
+
+.meeting-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.meeting-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.meeting-header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.meeting-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.video-stage {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  overflow-y: auto;
+  align-content: start;
+}
+
+.video-tile {
+  position: relative;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+}
+
+.video-tile.speaking {
+  border: 2px solid var(--color-accent);
+}
+
+.video-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tile-label {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.tile-controls {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.tile-controls button {
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar {
+  width: 320px;
+  background-color: var(--color-bg-secondary);
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  overflow-y: auto;
+}
+
+.sidebar h2,
+.sidebar h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.participant-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+.waiting-room-banner {
+  background-color: var(--color-tertiary-container);
+  color: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.waiting-room-banner h3 {
+  color: white;
+  margin-bottom: var(--space-sm);
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  margin-top: var(--space-lg);
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.chat-message {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 14px;
+}
+
+.chat-message strong {
+  color: var(--color-accent);
+}
+
+.chat-form {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.control-bar {
+  position: fixed;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm) var(--space-md);
+  box-shadow: var(--shadow-card);
+}
+
+.control-bar button {
+  border-radius: var(--radius-full);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-bar button.leave-btn {
+  width: auto;
+  padding: 0 var(--space-lg);
+  background-color: var(--color-destructive);
+  border-color: var(--color-destructive);
+  color: white;
+  font-weight: 600;
+}
+
+.waiting-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.control-bar button svg {
+  display: block;
+}
+
+.control-off {
+  background-color: var(--color-destructive) !important;
+  border-color: var(--color-destructive) !important;
+}
+
+.control-active {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--text-on-accent) !important;
+}
+
+.leave-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.waiting-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
